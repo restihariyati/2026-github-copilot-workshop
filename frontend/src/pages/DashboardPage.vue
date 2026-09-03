@@ -7,7 +7,12 @@
         <p class="muted">Overview of PR, PO and GR activities</p>
       </div>
       <div class="btn-group">
-        <RouterLink to="/requisitions/new" class="btn btn-outline">+ New PR</RouterLink>
+        <RouterLink to="/requisitions/new" class="btn btn-outline"
+          >+ New PR</RouterLink
+        >
+        <RouterLink to="/purchase-orders/new" class="btn btn-primary"
+          >+ New PO</RouterLink
+        >
       </div>
     </div>
 
@@ -48,12 +53,24 @@
         </thead>
         <tbody>
           <tr v-for="item in stats.recentPr" :key="item.id">
-            <td><RouterLink :to="`/requisitions/${item.id}`">{{ item.prNumber }}</RouterLink></td>
+            <td>
+              <RouterLink :to="`/requisitions/${item.id}`">{{
+                item.prNumber
+              }}</RouterLink>
+            </td>
             <td>{{ item.requesterName }}</td>
             <td>
-              <span class="status-badge" :class="item.status.toLowerCase()">{{ item.status }}</span>
+              <span class="status-badge" :class="item.status.toLowerCase()">{{
+                item.status
+              }}</span>
             </td>
-            <td>{{ item.createdAt ? new Date(item.createdAt).toLocaleDateString() : '-' }}</td>
+            <td>
+              {{
+                item.createdAt
+                  ? new Date(item.createdAt).toLocaleDateString()
+                  : "-"
+              }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -62,9 +79,9 @@
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue';
-import { RouterLink } from 'vue-router';
-import { api } from '../api';
+import { onMounted, reactive } from "vue";
+import { RouterLink } from "vue-router";
+import { api } from "../api";
 
 const stats = reactive({
   totalPr: 0,
