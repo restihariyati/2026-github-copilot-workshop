@@ -1,7 +1,7 @@
 import { describe, test, expect, jest } from "@jest/globals";
 import {
   getRequisitionById,
-  listRequisitions,
+  //listRequisitions,
   getRequisitionOpenLines,
 } from "../../src/services/requisition-service.js";
 
