@@ -3,7 +3,7 @@ import {
   createPurchaseOrder,
   getPurchaseOrderById,
   listPurchaseOrders,
-  getOpenPoLines,
+  //getOpenPoLines,
   submitPurchaseOrder,
 } from "../../src/services/purchase-order-service.js";
 
